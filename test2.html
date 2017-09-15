@@ -1,0 +1,107 @@
+<html>
+<head>
+<script>
+window.onload = function(){
+	document.getElementById('rot').onclick = function() {
+		// console.log(this.dataset.flag);
+		if(this.dataset.flag == 1){
+			// document.getElementById('cpu').style.visibility = "hidden";
+			// document.getElementById('sink').style.visibility = "hidden";
+			document.getElementById('cpu').src = "";
+			document.getElementById('sink').src = "";
+			document.getElementById('main').src = "back.png";
+			this.dataset.flag = 0;
+		}
+		else{
+			document.getElementById('main').src = "moth.png";
+			// document.getElementById('cpu').style.visibility = "visible";
+			// document.getElementById('sink').style.visibility = "visible";
+			document.getElementById('cpu').src = "7.png";
+			document.getElementById('sink').src = "sink.png";
+			this.dataset.flag = 1;
+		}
+	}
+	document.getElementById('button').onclick=function(){
+		document.getElementById('ram').classList.add("anim");
+	}
+	document.getElementById('cpu').onmouseover = function(){
+		document.getElementById('info').style.display = "block";
+	}
+	document.getElementById('micro').onclick =function(){
+		this.classList.add("mican");
+	}
+	document.getElementById('cpu').onmouseout = function(){
+		document.getElementById('info').style.display = "none";
+	}
+}
+//console.log(document.getElementById('sink'));
+</script>
+<style>
+
+.test{
+	position: absolute;
+	transition: all 1s;
+}
+img#cpu {
+    top: 272px;
+    left: 547px;
+}
+img#ram{
+	transition: all 5s;
+}
+#sink{
+top: 477px;
+    left: 335px;
+}
+#rot{
+	top: 10px;
+	left:10px;
+    height: 100px;
+    width: 100px;
+}
+img.test:hover{
+	transform: scale(1.3);
+	border
+}
+div#info {
+    background-color: darkturquoise;
+    border: 1px solid rebeccapurple;
+    width: 500px;
+    position: absolute;
+    top: 159px;
+    left: 387px;
+    opacity: 0.76;
+    display: none;
+}
+img#button {
+    width: 200px;
+    position: absolute;
+    top: 1000px;
+    left: 500px;
+}
+img#micro {
+    position: absolute;
+    top: 10px;
+    left: 1000;
+    height: 200;
+}
+.anim{
+	transform: translate(252px,-380px) rotate(16deg) scale(1.1);
+}
+.mican{
+	transform: rotate(-3deg) scale(1.1) translate(-378px,250px) skewX(-9deg);
+}
+</style>
+</head>
+<body>
+<img src="moth.png" id="main">
+<img src="7.png" class="test" id="cpu">
+<img src="sink.png" class="test" id="sink">
+<img src="rotate.jpg" class="test" id="rot" data-flag=1>
+
+<img src="RAM1.jpg" id="ram">
+<img src="ram_icon.png" id="button" class="test">
+<img src="micro.png" id="micro" class="test">
+<div id="info">CPU<br>In computer hardware, a CPU socket or CPU slot comprises one or more mechanical components providing mechanical and electrical connections between a microprocessor and a printed circuit board (PCB). This allows for placing and replacing the central processing unit (CPU) without soldering. <div>
+</body>
+</html>

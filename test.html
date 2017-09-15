@@ -1,0 +1,34 @@
+<html>
+<head>
+	<style>
+	div {border: 5px solid gray;display: none;}
+	</style>
+	<script>
+	function getCoords(obj){
+		//alert('Hee');
+		x = window.event.x - obj.offsetLeft;
+		y = window.event.y - obj.offsetTop;
+		alert(x+','+y);
+		return;
+	}
+	function print(obj){
+		x = window.event.x - obj.offsetLeft;
+		y = window.event.y - obj.offsetTop;
+		if(x<=400 && x>=367 && y>=122 && y<=214){
+			var d = document.getElementById("test");
+			d.style.display = "inline";
+		}
+	}
+	</script>
+</head>
+<body>
+	<image src="Motherboard.png" onclick="print(this)" height=500 width=500>
+	<div id="test">
+		Random Text! 
+	</div>
+<!-- <image src="Motherboard.png" usemap="#meshde">
+<map name="meshde">
+<area shape="rect" coords="0,0,82,126" onclick="alert('Left Side');">
+</map> !-->
+</body>
+</html>
